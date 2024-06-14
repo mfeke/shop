@@ -1,0 +1,118 @@
+.img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 550px;
+}
+
+.f {
+    font-size: 21px;
+    font-weight: 300;
+}
+
+.pacifico-regular {
+    font-family: "Pacifico";
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+.bg {
+    /* background: rgba(255, 255, 255, 0.4) !important; */
+    background: rgba(0, 0,0, 0.4) !important;
+
+
+
+}
+
+.col-1{
+    width: 260px;
+}
+.product{
+    height: 400px;
+}
+.pay{
+    width: 120px;
+}
+.bg-1{
+
+    background-color: rgb(195, 146, 241);
+}
+.w-10{
+    width: 30px;
+}
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+  }
+.cur{
+    cursor: pointer;
+}
+.m{
+    margin-left: 5px;
+    position: relative;
+    top: -20px;
+    left: 14px;
+}
+
+.container-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+
+}
+
+.image-section {
+    position: relative;
+    flex: 1;
+    margin: 10px;
+}
+.text{
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+.image-section img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+.overlay-text {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    /* font-size: 24px; */
+    font-weight: bold;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    padding: 15px;
+}
+.img{
+    height: 525px !important;
+}
+.p-1{
+    padding: 15px !important;
+
+}
+
+.bold{
+    font-weight: bold;
+}
+.grid-container>div {
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    padding: 10px 0;
+}
+label{
+    font-size: 18px;
+}

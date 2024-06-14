@@ -1,0 +1,56 @@
+
+<div class="img" *ngFor="let cover of body" [ngStyle]="{'background': 'url(' + cover.image  + ') no-repeat 0 0 / cover'}">
+    <div class="bg d-flex justify-content-center align-items-center h-100" >
+        <span class=" f px-0 p-3 text-white">New Arrivals {{cover.name}} Collection</span>
+
+    </div>
+</div>
+<div class="px-3 mt-2">
+    <h2 class="pacifico-regular mb-0">Trending Categories</h2>
+
+</div>
+<div class="grid-container" >
+    <div class="coi" *ngFor="let item of listCart.slice(2)">
+        <div class="item1 pt-0 cur pacifico-regular"   [routerLink]="['/za',params|lowercase, getEncodedUrl(item.name)]"  >
+            <img src="{{item.image}}"  alt="" class="w-100  img" >
+            <div class="d-flex justify-content-center">
+                <div class="con">
+                    <label for="" class="pacifico-regular text-start pt-1" >{{item.name}}</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="p-1">
+    <div class=" bg-1  cur  d-flex justify-content-center p-2 mb-4">
+        <div class="con">
+            <div class="d-flex align-items-center">
+                <div class="con me-4">
+                    <img src="https://i.postimg.cc/5tfJmvHH/download-removebg-preview-1.png" class="pay" alt="">
+                    <p class="text-dark m">Pay in three</p>
+                </div>
+                <p class=" ">Wear Now. Pay later</p>
+            </div>
+    
+        </div>
+    </div>
+</div>
+
+<div class="px-2 pt-4">
+    <h1 class="headline d-flex justify-content-center">#HMSouthAfrica</h1>
+    <div class="container-1 pt-2 ">
+        <div class="image-section " *ngFor="let item of listGallery">
+            <img src="{{item.image}}" alt="Fashion 4">
+            <div class="overlay-text">
+                <p class="mb-0">&#64;{{item.name}}</p>
+            </div>
+        </div>
+
+    </div>
+    <label href="" class="text text-dark px-2">View all</label>
+
+</div>
+
+
+
+

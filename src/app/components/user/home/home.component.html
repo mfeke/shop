@@ -1,0 +1,150 @@
+<div class="d-flex p-2 justify-content-center pt-3" *ngFor="let i of main ">
+    <b class="text-center pacifico-regular"> {{i.name}}</b>
+</div>
+<div class="d-flex justify-content-center" *ngFor="let i of main ">
+    <div class="d-flex" *ngFor="let tag of i.tags">
+        <div class="p-1 px-3 border border-black me-2 cur" >
+            <p class="mb-0 text pacifico-regular">{{tag.name}}</p>
+        </div>
+
+    </div>
+</div>
+
+<div class="px-3">
+    <p class="pacifico-regular text-secondary mb-0">45 Products</p>
+</div>
+
+<div class="grid-container">
+    <div class="item1 pt-0">
+        <img src="https://i.postimg.cc/0jTdSSb5/shorts-K.jpg mb-2" alt="" class="w-100 img">
+        <div class="d-flex justify-content-center">
+            <div class="con">
+                <label for="" class="pacifico-regular text-start pt-1">Oversized teddy-lined jacket</label>
+                <p class="pacifico-regular  text mb-1 text-center">3 Colours</p>
+                <div class="d-flex justify-content-center">
+                    <label for="" class="pacifico-regular text-start ">{{price.newPrice|currency:"R "}}</label>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="item1 pt-0">
+        <img src="https://i.postimg.cc/ydWtmWmg/po.jpg" alt="" class="w-100 mb-2 img">
+        <div class="d-flex justify-content-center">
+            <div class="con">
+                <label for="" class="pacifico-regular text-start pt-1">Oversized teddy-lined jacket</label>
+                <p class="pacifico-regular  text mb-1 text-center">3 Colours</p>
+                <div class="d-flex justify-content-center">
+                    <label for="" class="pacifico-regular text-start me-2 line"> {{price.oldPrice|currency:"R "}}</label>
+                    <label for="" class="pacifico-regular text-start ">{{price.newPrice|currency:"R "}}</label>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="item1 pt-0">
+        <img src="https://i.postimg.cc/0jTdSSb5/shorts-K.jpg mb-2" alt="" class="w-100 img">
+        <div class="d-flex justify-content-center">
+            <div class="con">
+                <label for="" class="pacifico-regular text-start pt-1">Oversized teddy-lined jacket</label>
+                <p class="pacifico-regular  text mb-1 text-center">3 Colours</p>
+                <div class="d-flex justify-content-center">
+                    <label for="" class="pacifico-regular text-start me-2 line"> {{price.oldPrice|currency:"R "}}</label>
+                    <label for="" class="pacifico-regular text-start ">{{price.newPrice|currency:"R "}}</label>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="item1 pt-0">
+        <img src="https://i.postimg.cc/0jTdSSb5/shorts-K.jpg mb-2" alt="" class="w-100 img">
+        <div class="d-flex justify-content-center">
+            <div class="con">
+                <label for="" class="pacifico-regular text-start pt-1">Oversized teddy-lined jacket</label>
+                <p class="pacifico-regular  text mb-1 text-center">3 Colours</p>
+                <div class="d-flex justify-content-center">
+                    <label for="" class="pacifico-regular text-start me-2 line"> {{price.oldPrice|currency:"R "}}</label>
+                    <label for="" class="pacifico-regular text-start ">{{price.newPrice|currency:"R "}}</label>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+</div>
+<div class="fixed-bottom">
+    <div class="d-flex justify-content-center">
+        <div class="d-flex bg-light">
+            <div class="p-2 px-4  me-2 b-f cur" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                <p class="mb-0 pacifico-regular">FILTER</p>
+            </div>
+            <div class="p-2 px-4   cur">
+                <p class="mb-0  pacifico-regular" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">SORT</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header d-flex justify-content-between bg-light">
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bold cur bi-chevron-left" data-bs-dismiss="offcanvas" aria-label="Close" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+    </svg>
+    <h6 id="offcanvasCenterLabel"  class="mt-2">FILTER & SORT</h6>
+    <div class="text-white">x</div>
+    <!-- <h5 id="offcanvasCenterLabel" >Offcanvas right</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
+  </div>
+  <div class="offcanvas-body">
+    <!-- Accordion -->
+  <div class="accordio" id="accordionExample">
+    <div class="accordion-item">
+      <div class="accordion-header p-2 d-flex" id="headingOne">
+        <b class="accordion-button pacifico-regular tex" role="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          TYPE OF PRODUCTS
+        </b>
+      </div>
+      <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div class="accordion-body px-2">
+          <strong>This is the first item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header p-2" id="headingTwo">
+        <b class="accordion-button collapsed pacifico-regular tex" role="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          COLOUR
+        </b>
+      </div>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div class="accordion-body px-2 ">
+          <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header" id="headingThree">
+        <b class="accordion-button p-2 pacifico-regular collapsed tex"  role="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            SIZE
+        </b>
+      </div>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+        <div class="accordion-body px-2">
+          <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Accordion -->
+  </div>
+</div>

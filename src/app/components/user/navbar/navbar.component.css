@@ -1,0 +1,144 @@
+.logo{
+    width: 50px;
+    height: 30px;
+}
+.n{
+    margin-top: 2px;
+}
+.cur{
+    cursor: pointer;
+}
+
+.bor{
+    border-radius: 100%;
+}
+.me{
+    width: 300px;
+}
+
+p , .p{
+    font-size: 14px;
+}
+.io{
+    font-size: 12px;
+}
+.fo {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.font{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+
+
+
+.top{
+    top: 0px;
+    background: rgba(255, 255, 255, 0.1);
+}
+.cur{
+    cursor: pointer;
+}
+.width {
+    position: absolute;
+    right: 0px;
+    width: 480px;
+
+}.z{
+    z-index: 1;
+}
+.h{
+    height: 23px;
+    font-size: 15px;
+}
+.br{
+    border-radius: 0px;
+}
+@media only screen and (max-width: 600px) {
+  
+    /*Big smartphones [426px -> 600px]*/
+    .jo {
+        display: none;
+    }
+
+    .logo {
+        width: 80px;
+        height: 70px;
+    }
+
+    .dblock {
+        display: none !important;
+    }
+
+    input {
+        border: none;
+        padding: 0px;
+        border-radius: 0px;
+        border-bottom: 1px solid gainsboro;
+        background: rgba(255, 255, 255, 0.9) !important;
+
+    }
+
+
+    ::placeholder {
+        font-size: 15px;
+        background: rgba(255, 255, 255, 0.9);
+
+    }
+
+    .text {
+        height: 20px;
+    }
+
+    .fo {
+        font-size: 12px;
+    }
+
+    .d-none {
+        display: flex !important;
+    }
+
+    .p-3 {
+        padding: 10px !important;
+    }
+
+    .column {
+        float: left !important;
+        width: 50% !important;
+        padding: 10px !important;
+    }
+
+    /* Clear floats after the columns */
+    .row-1:after {
+        content: "" !important;
+        display: table !important;
+        clear: both !important;
+    }
+
+    .position-fixed {
+        top: 0px;
+        background: rgba(255, 255, 255, 0.9);
+    }
+
+    .text {
+        font-size: 15px;
+        font-weight: normal;
+    }
+
+    .width {
+        width: 350px;
+
+    }
+
+    .none {
+        background: rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.1);
+
+    }
+
+
+}

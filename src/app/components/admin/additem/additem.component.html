@@ -1,0 +1,196 @@
+<div class="container ">
+    <div class="d-flex justify-content-end mt-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="m-2 me-4" width="1.3em" height="1.3em" viewBox="0 0 16 16">
+            <path fill="currentColor"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-6.5a6.5 6.5 0 1 0 0 13a6.5 6.5 0 0 0 0-13M6.92 6.085h.001a.749.749 0 1 1-1.342-.67c.169-.339.436-.701.849-.977C6.845 4.16 7.369 4 8 4a2.76 2.76 0 0 1 1.637.525c.503.377.863.965.863 1.725c0 .448-.115.83-.329 1.15c-.205.307-.47.513-.692.662c-.109.072-.22.138-.313.195l-.006.004a6 6 0 0 0-.26.16a1 1 0 0 0-.276.245a.75.75 0 0 1-1.248-.832c.184-.264.42-.489.692-.661q.154-.1.313-.195l.007-.004c.1-.061.182-.11.258-.161a1 1 0 0 0 .277-.245C8.96 6.514 9 6.427 9 6.25a.61.61 0 0 0-.262-.525A1.27 1.27 0 0 0 8 5.5c-.369 0-.595.09-.74.187a1 1 0 0 0-.34.398M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0" />
+        </svg>
+        <div class="border p-2 px-3 br">
+            View Shop
+        </div>
+
+    </div>
+    <div class="d-flex mb-4">
+        <div class="p-2 br px-3 border me-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+            </svg>
+        </div>
+        <div class="con">
+            <h6 class="text-secondary">Back to product list</h6>
+            <h5 class="mb-0">Add New Products</h5>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="0">Name <span class="text-danger">*</span></label>
+            <div class="c mb-2">
+                <span class="text-secondary tip">Make it short, descriptive and exciting</span>
+            </div>
+            <div class="input-group mb-4">
+                <input type="text" class="form-control input p-2 px-3"
+                    placeholder="What is the name of your experience " aria-label="Recipient's username"
+                    aria-describedby="basic-addon2" [(ngModel)]="title">
+            </div>
+            <!-- description start -->
+            <label for="0">Description <span class="text-danger">*</span></label>
+            <div class="c mb-2">
+                <span class="text-secondary tip">Make it short, descriptive and exciting</span>
+            </div>
+            <quill-editor class="w-100 h-10 mb-4" #des [(ngModel)]="description" [modules]="editorConfig"
+                placeholder="Type your description.."></quill-editor>
+
+            <!-- description end -->
+
+
+            <div class="d-flex justify-content-between mt-4 mb-0">
+                <label for="0">Media <span class="text-danger">*</span></label>
+                <span class="text-secondary d-flex tip mt-1 btn p-0" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-link " viewBox="0 0 16 16">
+                        <path
+                            d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9q-.13 0-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z" />
+                        <path
+                            d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4 4 0 0 1-.82 1H12a3 3 0 1 0 0-6z" />
+                    </svg>
+                    <p class="tip mb-0 mx-3">Add image from URL</p>
+                </span>
+
+            </div>
+            <div class="c mb-2">
+                <span class="text-secondary tip">The maximum number of images you can upload for each product is
+                    four</span>
+            </div>
+            <div class="row mb-2" *ngIf="myArray">
+                <div class="col-3 mb-2" *ngFor="let image of myArray">
+                    <div class="card">
+                        <img src="{{image}}" alt="" class="w-100 br product-img">
+                        <div class="row  p-3">
+                            <div class="col cur text-black d-flex justify-content-center p-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-eye" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z" />
+                                    <path
+                                        d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0" />
+                                </svg>
+                            </div>
+                            <div class="col cur d-flex justify-content-center text-danger border-1 p-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-trash3" viewBox="0 0 16 16">
+                                    <path
+                                        d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5" />
+                                </svg>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="d-flex justify-content-center cur mb-3" (click)="fileInput.click()">
+                <div class="w-100 p-3   br dash pt-5 pb-5">
+                    <div class="d-flex justify-content-center">
+                        <img src="https://i.postimg.cc/FHLf6vBc/Screenshot-2024-05-18-101729-removebg-preview.png"
+                            alt="" class=" drop">
+                    </div>
+                    <h5 class="text-center mt-2">Drag and drop your file here</h5>
+                    <p class="text-secondary text-center">or</p>
+                    <div class="d-flex justify-content-center">
+                        <button type="button" class="btn border" (click)="fileInput.click()">
+                            Browse file
+                        </button>
+                        <input #fileInput type="file" style="display: none" (change)="onFileSelected($event)">
+
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content ">
+                        <div class="modal-header border-none px-4 m-0">
+                            <h5 class="modal-title" id="exampleModalLabel">Add image from URL</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body px-4">
+                            <p class="text-secondary">Paste image URL</p>
+                            <input type="text" class="form-control p-2 mb-4" placeholder="https://" [(ngModel)]="url">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn border btn-white" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="isAddUrl">Add
+                                media</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Modal -->
+            <label for="0">Pricing <span class="text-danger">*</span></label>
+            <div class="c mb-2">
+                <span class="text-secondary tip">Add credibility and justify price.</span>
+            </div>
+            <div class="input-group border d-flex mb-4">
+                <input type="number" class="form-control input p-2 px-3" placeholder="0.00 "
+                    aria-label="Recipient's username" [(ngModel)]="price" aria-describedby="basic-addon2">
+                <span class="p-2 px-3">R</span>
+            </div>
+
+ 
+            
+
+        </div>
+        <div class="col-4 px-2">
+            <!-- Select -->
+            <label for="" class="mb-2 px-1">Category <span class="text-danger">*</span></label>
+            <div class="tom-select-custom bor-0">
+                <select class="js-select form-select"autocomplete="off" data-hs-tom-select-options='{
+            "placeholder": "Select a person...",
+            "hideSearch": true
+          }'>
+                    <option value="Men"  *ngFor="let  i of category"    >{{i.name}}</option>
+                </select>
+            </div>
+            <!-- End Select -->
+
+            <label for="" class="mb-2  mt-3 px-1 ">Collection <span class="text-danger">*</span></label>
+            <div class="tom-select-custom bor-0">
+                <select class="js-select form-select" autocomplete="off" data-hs-tom-select-options='{
+            "placeholder": "Select a person...",
+            "hideSearch": true
+          }'>
+                    <option value="Men">Winter</option>
+                    <option value="Women">Spring</option>
+                    <option value="Kids">Summer </option>
+                    <option value="H&M home">Autumn</option>
+                </select>
+            </div>
+            <!-- End Select -->
+
+            <label for="0" class="mt-3 px-1">Tag <span class="text-danger">*</span></label>
+            <div class="c mb-2">
+            </div>
+            <div class="d-flex w-100"  *ngIf="tags">
+                <div class="bg-dark p-1 me-2" *ngFor=" let i of tags">
+                    <span class="text-white fo px-2" >{{i}}</span>
+                </div>
+            </div>
+            <div class="input-group mb-4">
+                <input type="text" class="form-control input p-2 px-3"
+                    placeholder="Enter tags here " aria-label="Recipient's username"
+                    aria-describedby="basic-addon2">
+                    <button type="button" class="btn bor-0 bg-secondary" >Submit</button>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

@@ -1,0 +1,241 @@
+<div class="w-100 h-100 pt-5" [ngStyle]="{'background': 'url(' +  body[4].image+ ') no-repeat 0 0 / cover'}">
+    <span>{{body[4].name}}</span>
+</div>
+
+
+
+
+<div class="grid-container ">
+    <div class="item1 pt-0 cur" routerLink="/za/{{item.name|lowercase}}"
+        *ngFor="let item of body.slice(0,4); let i = index">
+        <div alt="" class="w-100 img  pt-5" [ngStyle]="{'background': 'url(' + item.image + ') no-repeat 0 0 / cover'}">
+            <div class="d-flex justify-content-center align-items-center mt-5 pt-2">
+                <div class="container">
+                    <div class=" d-flex justify-content-center px-3">
+                        <h1 class="text-center bold text-white pacifico-regular">{{item.name|uppercase}}</h1>
+                    </div>
+                    <div class="hr">
+                        <div class="con  w-100 d-flex justify-content-center" *ngFor="let category of categoryList">
+                            <span class="text-center ni pacifico-regular text-white text-dark  bol p-1"
+                                *ngIf="item._id === category.categoryId[0]">{{category.name | uppercase}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="d-flex pb-2">
+
+    <div class="item img-1 w-10" [ngStyle]="{'background': 'url(' + body[5].image + ') no-repeat 0 0 / cover'}">
+    </div>
+
+    <div class="item img-1 w-50 bg-light d-flex align-items-center pacifico-regular">
+        <div class=" p-2 px-4">
+            <h5>EDITED</h5>
+            <h3>{{body[5].name|uppercase}}</h3>
+            <p class="text-dark">Elevate your style with our Classic Winter Collection, a perfect <br> blend of premium
+                linen,
+                comfort, and contemporary design.</p>
+            <p class="text cur">SHOP NOW</p>
+
+        </div>
+
+    </div>
+</div>
+<div class="GR grid-container">
+    <div class="item1">
+        <img src="https://i.postimg.cc/Jh64fDPV/DINING-6-HF4-Nef.jpg" class="w-100 im" alt="">
+        <div class="p-3 bg-black d-flex justify-content-center ">
+            <span class="bold text-white text-center">DINING</span>
+        </div>
+    </div>
+    <div class="item1">
+        <img src="https://i.postimg.cc/vZTKP4g6/BEDDING-1l-GTtnn.jpg" class="w-100 im" alt="">
+        <div class="p-3 bg-black d-flex justify-content-center ">
+            <span class="bold text-white text-center">BEDDING</span>
+        </div>
+    </div>
+    <div class="item1">
+        <img src="https://i.postimg.cc/bJh3jrJg/WORkspace.jpg" class="w-100 im" alt="">
+        <div class="p-3 bg-black d-flex justify-content-center ">
+            <span class="bold text-white text-center">WORKSPACE</span>
+        </div>
+    </div>
+    <div class="item1">
+        <img src="https://i.postimg.cc/htTwdHHX/DECOR-OTNds-Ia.jpg" class="w-100 im" alt="">
+        <div class="p-3 bg-black d-flex justify-content-center ">
+            <span class="bold text-white text-center">DECOR</span>
+        </div>
+    </div>
+</div>
+<h2 class="text-center pt-2">NEW IN</h2>
+<div class="grid-container-new">
+    <div class="item1 pt-0">
+        <img src="https://i.postimg.cc/5NQsFNgS/newmen.jpg" alt="" class="w-100 new">
+        <div class="d-flex justify-content-center">
+            <div class="con">
+                <label for="" class="pacifico-regular text-start pt-1">Oversized teddy-lined jacket</label>
+                <p class="pacifico-regular  text mb-1 text-center">3 Colours</p>
+                <div class="d-flex justify-content-center">
+                    <label for="" class="pacifico-regular text-start ">{{price.newPrice|currency:"R "}}</label>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="item1 pt-0">
+        <img src="https://i.postimg.cc/dVvSPcRR/new-bags.jpg" alt="" class="w-100 mb-2 new">
+        <div class="d-flex justify-content-center">
+            <div class="con">
+                <label for="" class="pacifico-regular text-start pt-1">Oversized teddy-lined jacket</label>
+                <p class="pacifico-regular  text mb-1 text-center">3 Colours</p>
+                <div class="d-flex justify-content-center">
+                    <label for="" class="pacifico-regular text-start me-2 line"> {{price.oldPrice|currency:"R
+                        "}}</label>
+                    <label for="" class="pacifico-regular text-start ">{{price.newPrice|currency:"R "}}</label>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="item1 pt-0">
+        <img src="https://i.postimg.cc/5NQsFNgS/newmen.jpg" alt="" class="w-100 new">
+        <div class="d-flex justify-content-center">
+            <div class="con">
+                <label for="" class="pacifico-regular text-start pt-1">Oversized teddy-lined jacket</label>
+                <p class="pacifico-regular  text mb-1 text-center">3 Colours</p>
+                <div class="d-flex justify-content-center">
+                    <label for="" class="pacifico-regular text-start ">{{price.newPrice|currency:"R "}}</label>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="item1 pt-0">
+        <img src="https://i.postimg.cc/4yDb1VPb/new-mend.jpg" alt="" class="w-100 new">
+        <div class="d-flex justify-content-center">
+            <div class="con">
+                <label for="" class="pacifico-regular text-start pt-1">Oversized teddy-lined jacket</label>
+                <p class="pacifico-regular  text mb-1 text-center">3 Colours</p>
+                <div class="d-flex justify-content-center">
+                    <label for="" class="pacifico-regular text-start me-2 line"> {{price.oldPrice|currency:"R
+                        "}}</label>
+                    <label for="" class="pacifico-regular text-start ">{{price.newPrice|currency:"R "}}</label>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="item1 pt-0">
+        <img src="https://i.postimg.cc/MTZsc73n/new-las.jpg" alt="" class="w-100 new">
+        <div class="d-flex justify-content-center">
+            <div class="con">
+                <label for="" class="pacifico-regular text-start pt-1">Oversized teddy-lined jacket</label>
+                <p class="pacifico-regular  text mb-1 text-center">3 Colours</p>
+                <div class="d-flex justify-content-center">
+                    <label for="" class="pacifico-regular text-start me-2 line"> {{price.oldPrice|currency:"R
+                        "}}</label>
+                    <label for="" class="pacifico-regular text-start ">{{price.newPrice|currency:"R "}}</label>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!-- <div class="grid-container"  *ngIf="body && body.length > 1">
+    <div class="item1 pt-0 cur"   routerLink="/za/{{item.name|lowercase}}"
+    *ngFor="let item of body.slice(1); let i = index">
+        <img src="{{item.image}}"  alt="" class="w-100 img">
+    </div>
+</div>
+
+
+<div class="d-flex mt-2">
+    <div class="col-6 bg">
+        <div class="d-flex">
+            <div class="col">
+                <div class="img-2 mix w-100 d-flex align-items-center"
+                    [ngStyle]="{'background': 'url(' + backgroundUrl + ') no-repeat 0 0 / cover'}">
+                </div>
+            </div>
+            <div class="col">
+                <div class="img-2 mix w-100 d-flex align-items-center"
+                    [ngStyle]="{'background': 'url(' + backgroundUrl2 + ') no-repeat 0 0 / cover'}">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-6 p-3 pt-2 d-flex align-items-center ">
+        <div class="con">
+            <label for="" class="bold" >Featured Collections </label>
+            <h1 class="te mt-3"> Find The Winter Trending <br>  Cloting In The World</h1>
+            <div class="h">
+                <div class="bg-white ">
+                    <div class="d-flex justify-content-start">
+                        <div class="" routerLink="/za/{{item.name|lowercase}}"
+                        *ngFor="let item of body.slice(1,3); let i = index">
+                        <div class="bg-black  btn px-5 me-3 mt-2  mb-4">
+                            <span class="text-white bold">{{item.name}}</span>
+                        </div>
+                    </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-3 d-flex align-items-center">
+
+            <div class="con">
+                <h3 class="te mt-3">NEW ARRIVALS</h3>
+                <label for="" class="word-wrap">Essential wardrobe staples curated for  gloomy days and afternoon adventures</label>
+            </div>
+
+        </div>
+        <div class="col-3">
+            <img src="https://i.postimg.cc/vBzXFvtx/new-i.jpg" class="new-i w-100" alt="">
+        </div>
+        <div class="col-3">
+            <img src="https://i.postimg.cc/hvmjQ2Zf/Dresses-Skirts-K.jpg" class="new-i w-100" alt="">
+        </div>
+        <div class="col-3">
+            <img src="https://i.postimg.cc/x1Dm5zLw/Knitwear.jpg" class="new-i w-100" alt="">
+        </div>
+    </div>
+
+
+
+</div>
+<div class="px-2 pt-3">
+    <h1 class="headline d-flex cur te mb-0">#HMSouthAfrica</h1>
+    <div class="container-1 pt-2 ">
+        <div class="image-section " *ngFor="let item of listGallery">
+            <img src="{{item.image}}" alt="Fashion 4">
+            <div class="overlay-text">
+                <p class="mb-0">&#64;{{item.name}}</p>
+            </div>
+        </div>
+
+    </div>
+
+</div> -->

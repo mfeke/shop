@@ -1,0 +1,48 @@
+.cat-img {
+    width: 300px !important;
+    height: 140px;
+    border-radius: 5px !important;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    padding: 15px;
+}
+.img{
+    height: 525px !important;
+}
+
+
+.bold{
+    font-weight: bold;
+}
+.grid-container>div {
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    padding: 10px 0;
+}
+.b-f{
+    border-right: gainsboro solid 1px;
+}
+
+.line{
+    /* position: static; */
+    text-decoration: line-through;
+}
+.pacifico-regular {
+    font-size: 18px;
+    font-family: "Pacifico";
+    font-style: normal;
+}
+.text{
+    font-size: 15px;
+}
+.cur{
+    cursor: pointer;
+}
+
+.tex{
+    font-size: 13px ;
+
+}
