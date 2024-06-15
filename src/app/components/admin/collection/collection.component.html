@@ -48,6 +48,7 @@
                     <option selected>Open this select menu</option>
                     <option value="{{category._id}}" *ngFor="let category of listCategories">{{category.name}}</option>
                 </select>
+                <input type="checkbox" [(ngModel)]="return" id="" (change)="onChangeReturn($event)">
                 <div class="d-flex justify-content-center cur mb-3" (click)="fileInput.click()">
                     <div class="w-100 p-3   br dash pt-5 pb-5">
                         <div class="d-flex justify-content-center">

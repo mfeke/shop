@@ -15,7 +15,7 @@ export class HomeComponent {
   url!: string;
 
   main:any[] =[];
-
+ 
   constructor(private productService: ProductsService,private route: ActivatedRoute) { }
 
 

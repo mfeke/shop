@@ -38,8 +38,6 @@ export class MainComponent {
     this.url = String(this.route.snapshot.paramMap.get("id"))
     this.url = this.titleCaseWord(this.url)
     this.params = String(this.route.snapshot.paramMap.get("id"))
-    console.log(this.url)
-
   }
   isGetCollectioByCat() {
 

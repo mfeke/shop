@@ -12,11 +12,14 @@ export class CollectionComponent {
   imageUrl: any;
   name = ""
   id: string = "";
+  return: boolean = false
   listCategories: any[] = []
   url: any
   listCart: any[] = []
   menu: boolean = false
+  num:number = 0
   constructor(private productService: ProductsService, private route: ActivatedRoute) { }
+
 
   ngOnInit() {
     this.isGetUrl()
@@ -29,7 +32,7 @@ export class CollectionComponent {
     console.log(event)
 
   }
-  isMenu(){
+  isMenu() {
     this.menu != this.menu
   }
 
@@ -38,7 +41,14 @@ export class CollectionComponent {
     this.selectedFile = event.target.files[0];
     this.uploadImage(file);
   }
-
+  onChangeReturn(event: any) {
+    if(true === this.return){
+      this.num = 1
+    }else{
+      this.num = 0
+    }
+    console.log(this.return, this.num)
+  }
   uploadImage(file: File) {
     const reader = new FileReader();
     reader.onload = () => {
@@ -98,6 +108,8 @@ export class CollectionComponent {
     var formData = new FormData();
     formData.append('name', this.name);
     formData.append('categoryId', this.id);
+    formData.append('return',String(this.num));
+
     if (this.selectedFile) {
       formData.append('image', this.selectedFile)
     }

@@ -22,20 +22,18 @@ export class ShopComponent {
     newPrice: 900.00,
     oldPrice: 1200.00,
   }
-  listCart = [
-    { image: "https://i.postimg.cc/TYVqr9dr/original-2.jpg", name: "Shoes Collection" },
-    { image: "https://i.postimg.cc/Nj8THfxb/original-1.jpg", name: " Sports Collection" },
-    { image: "https://i.postimg.cc/hvPqCN1m/1008-autumn-winter-2024-drop1-NTM-03-1280x868.jpg", name: "Jackets & Coats Collection" }
+  home: any = {}
+  most: any = {}
 
-  ]
   constructor(private apiService: ApiService, private productService: ProductsService, private route: ActivatedRoute) { }
-
   ngOnInit() {
 
-    this.isGetGallery()
     this.productService.getCategories().subscribe({
       next: data => {
         this.body = data
+        this.home = data[4]
+        this.most = data[5]
+
       }
     })
     this.isAllCollection()
@@ -52,6 +50,7 @@ export class ShopComponent {
     this.productService.getCollection().subscribe({
       next: data => {
         this.categoryList = data
+        console.log(data)
       }
     })
   }

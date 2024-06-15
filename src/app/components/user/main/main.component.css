@@ -4,7 +4,9 @@
     background-size: cover;
     height: 550px;
 }
-
+.font{
+    font-size: 13px;
+}
 .f {
     font-size: 21px;
     font-weight: 300;
@@ -32,12 +34,13 @@
     height: 400px;
 }
 .pay{
-    width: 120px;
+    width: 100px;
 }
 .bg-1{
 
     background-color: rgb(195, 146, 241);
 }
+.im
 .w-10{
     width: 30px;
 }
@@ -94,13 +97,11 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto  auto;
     grid-gap: 10px;
-    padding: 15px;
+    padding: 10px ;
 }
-.img{
-    height: 525px !important;
-}
+
 .p-1{
     padding: 15px !important;
 
@@ -114,5 +115,9 @@
     padding: 10px 0;
 }
 label{
-    font-size: 18px;
+    font-size: 16px;
+}
+
+.prod{
+    height: 330px;
 }
