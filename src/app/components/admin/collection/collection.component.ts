@@ -14,10 +14,14 @@ export class CollectionComponent {
   id: string = "";
   return: boolean = false
   listCategories: any[] = []
+  description =''
   url: any
   listCart: any[] = []
   menu: boolean = false
   num:number = 0
+  myArray: string[]=[];
+  selectedFiles: File[]=[];
+
   constructor(private productService: ProductsService, private route: ActivatedRoute) { }
 
 
@@ -41,6 +45,22 @@ export class CollectionComponent {
     this.selectedFile = event.target.files[0];
     this.uploadImage(file);
   }
+  isFileSelected(event: any) {
+    const files: FileList = event.target.files;
+    if (files && files.length > 0) {
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        this.selectedFiles.push(file)
+        const reader = new FileReader()
+        reader.onload = () => {
+          this.myArray.push(reader.result as string);
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+  }
+
+
   onChangeReturn(event: any) {
     if(true === this.return){
       this.num = 1
@@ -78,23 +98,7 @@ export class CollectionComponent {
     if (!word) return word;
     return word[0].toUpperCase() + word.substr(1).toLowerCase();
   }
-  isCreateCategory() {
-    var formData = new FormData();
 
-    formData.append('name', this.name);
-    if (this.selectedFile) {
-      formData.append('image', this.selectedFile);
-
-    }
-    this.productService.createCategory(formData).subscribe({
-      next: data => {
-        if (data) {
-          window.location.reload()
-        }
-      }
-    })
-
-  }
   isGetCategories() {
     this.productService.getCategories().subscribe({
       next: data => {
@@ -140,6 +144,24 @@ export class CollectionComponent {
       }
     })
 
+  }
+  onPromotion() {
+    var formData = new FormData();
+    formData.append('name', this.name);
+    formData.append('categoryId', this.id);
+    formData.append('description',this.description);
+    if (this.selectedFiles && this.selectedFiles.length) {
+      for (let i = 0; i < this.selectedFiles.length; i++) {
+        formData.append('images', this.selectedFiles[i]);
+      }
+    }
+    this.productService.createPromo(formData).subscribe({
+      next: data => {
+        if (data) {
+          window.location.reload()
+        }
+      }
+    })
   }
 
 

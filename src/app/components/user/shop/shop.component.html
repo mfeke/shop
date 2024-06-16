@@ -1,5 +1,5 @@
-<div class="w-100 h-100 pt-5"  [ngStyle]="{'background': 'url(' + home.image + ') no-repeat 0 0 / cover'}">
-    <span>{{home.name}}</span>
+<div class="w-100 image d-flex align-items-end pt-5"  [ngStyle]="{'background': 'url(' + home.image + ') no-repeat 0 0 / cover'}">
+    <h1 class="pacifico-regular text-white">{{home.name}}</h1>
 </div>
 <div class="grid-container pacifico-regular">
     <div class="item1 pt-0 cur" routerLink="/za/{{item.name|lowercase}}"

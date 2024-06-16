@@ -7,6 +7,22 @@
 .font{
     font-size: 13px;
 }
+.h2{
+    width: 190px;
+}
+.des{
+    width: 450px;
+}
+.img-1 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 380px;
+    height: 400px;
+}
+.cot{
+    height: 250px;
+}
 .f {
     font-size: 21px;
     font-weight: 300;
@@ -40,10 +56,8 @@
 
     background-color: rgb(195, 146, 241);
 }
-.im
-.w-10{
-    width: 30px;
-}
+
+
 .ellipsis {
     white-space: nowrap;
     overflow: hidden;
@@ -102,8 +116,32 @@
     padding: 10px ;
 }
 
+.grid-container-new {
+    display: grid;
+    grid-template-columns: auto auto auto  auto;
+    grid-gap: 10px;
+    padding: 10px ;
+
+
+}
+.grid-container-1 {
+    display: grid;
+    grid-template-columns: auto auto;
+
+}
+.new{
+    height: 470px;
+}
+.w-10{
+    width: 70px;
+}
+.line{
+    /* position: static; */
+    text-decoration: line-through;
+    color: red;
+}
 .p-1{
-    padding: 15px !important;
+    padding:0px 15px !important;
 
 }
 
@@ -119,5 +157,6 @@ label{
 }
 
 .prod{
+    
     height: 330px;
 }

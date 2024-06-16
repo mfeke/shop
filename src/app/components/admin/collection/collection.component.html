@@ -1,8 +1,14 @@
 <div class="container">
     <!-- Button trigger modal -->
     <div class="d-flex justify-content-end">
-        <button type="button" class="btn px-4 text-white bg-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Create Folder
+        <button type="button" class="btn px-4 me-2 text-white bg-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Create Collection
+        </button>
+        <button type="button" class="btn px-4 me-2 text-white bg-dark" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+            Create Collection
+        </button>
+        <button type="button" class="btn px-4 text-white bg-dark" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+            Create Cover
         </button>
     </div>
 
@@ -73,6 +79,99 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary" (click)="isCreateCollection()">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Cover -->
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal Cover</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control" [(ngModel)]="name">
+                <select class="form-select" (change)="onCategoryChange($any($event.target).value)"
+                    aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="{{category._id}}" *ngFor="let category of listCategories">{{category.name}}</option>
+                </select>
+                <input type="checkbox" [(ngModel)]="return" id="" (change)="onChangeReturn($event)">
+                <div class="d-flex justify-content-center cur mb-3" (click)="fileInput.click()">
+                    <div class="w-100 p-3   br dash pt-5 pb-5">
+                        <div class="d-flex justify-content-center">
+                            <img src="https://i.postimg.cc/FHLf6vBc/Screenshot-2024-05-18-101729-removebg-preview.png"
+                                alt="" class=" drop">
+                        </div>
+                        <h5 class="text-center mt-2">Drag and drop your file here</h5>
+                        <p class="text-secondary text-center">or</p>
+                        <div class="d-flex justify-content-center">
+                            <button type="button" class="btn border" (click)="fileInput.click()">
+                                Browse file
+                            </button>
+                            <input #fileInput type="file" style="display: none" (change)="onFileSelected($event)">
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <img src="{{imageUrl}}" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)="isCreateCover()">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal  Promotion-->
+
+<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal Promotion</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control" [(ngModel)]="name">
+                <input type="text" class="form-control" [(ngModel)]="description">
+                <select class="form-select" (change)="onCategoryChange($any($event.target).value)"
+                    aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="{{category._id}}" *ngFor="let category of listCategories">{{category.name}}</option>
+                </select>
+                <div class="d-flex justify-content-center cur mb-3" (click)="fileInpt.click()">
+                    <div class="w-100 p-3   br dash pt-5 pb-5">
+                        <div class="d-flex justify-content-center">
+                            <img src="https://i.postimg.cc/FHLf6vBc/Screenshot-2024-05-18-101729-removebg-preview.png"
+                                alt="" class=" drop">
+                        </div>
+                        <h5 class="text-center mt-2">Drag and drop your file here</h5>
+                        <p class="text-secondary text-center">or</p>
+                        <div class="d-flex justify-content-center">
+                            <button type="button" class="btn border" (click)="fileInpt.click()">
+                                Browse file
+                            </button>
+                            <input #fileInpt type="file" multiple  style="display: none" (change)="isFileSelected($event)">
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="con" *ngFor=" let image of myArray">
+                    <img src="{{image}}" alt="">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)="onPromotion()">Save changes</button>
             </div>
         </div>
     </div>

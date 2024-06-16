@@ -45,7 +45,13 @@ export class ProductsService {
     return this.http.post<any>(`${this.apiUrl}/createCollection`,form,httpOptions );
 
   }
-  
+  createPromo(form:any):Observable<any>{
+    return this.http.post<any>(`${this.apiUrl}/createPromotion`,form,httpOptions );
+
+  }
+  getPromoByCatName( name:any): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/getPromoByCatName/${name}`, httpOptions);
+  }
   updateCollectionById(id:any,form:any):Observable<any>{
     return this.http.put<any>(`${this.apiUrl}/updateCollectionById/${id}`,form,httpOptions );
 

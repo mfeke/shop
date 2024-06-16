@@ -9,12 +9,15 @@ import { ProductsService } from '../../../services/products.service';
   styleUrl: './main.component.css'
 })
 export class MainComponent {
-
+  promoList:any [] = []
   listCart: any = []
   listGallery: any = []
   wordnot ="New Arrivals"
   word = "Bestsellers"
-
+  price = {
+    newPrice: 900.00,
+    oldPrice: 1200.00,
+  }
   products = [
     { image: "https://i.postimg.cc/g2w82FSk/original-9.jpg", name: "White Oversized Fit Graphic Print T-Shirt ", price: 2300, color: ["red", "pink", "blue"] },
     { image: "https://i.postimg.cc/15qX4Ghw/original-11.jpg", name: "Pile hoodie - beige", price: 2300, color: ["red", "pink", "blue"] },
@@ -30,6 +33,7 @@ export class MainComponent {
   ngOnInit() {
     this.isGetUrl()
     this.isGetCollectioByCat()
+    this.isGetPromoByCat()
 
   }
 
@@ -46,6 +50,16 @@ export class MainComponent {
         this.listCart = data.category
         this.body = data.cover
         this.listGallery = data.gallery
+      }
+    })
+
+
+  }
+  isGetPromoByCat() {
+
+    this.productService.getPromoByCatName(this.url).subscribe({
+      next: data => {
+        this.promoList = data
       }
     })
 
