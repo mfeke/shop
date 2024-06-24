@@ -20,6 +20,7 @@ import { MainComponent } from './components/user/main/main.component';
 import { DepartmentsComponent } from './components/user/departments/departments.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { CollectionComponent } from './components/admin/collection/collection.component';
+import { CategoryComponent } from './components/admin/category/category.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { CollectionComponent } from './components/admin/collection/collection.co
     MainComponent,
     DepartmentsComponent,
     CollectionComponent,
+    CategoryComponent,
   ],
   imports: [
     BrowserModule,
