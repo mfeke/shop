@@ -55,12 +55,30 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <input type="text" class="form-control" placeholder="Enter Name of Category" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" placeholder="Enter Name of Category" [(ngModel)]="name"  aria-label="Username" aria-describedby="basic-addon1">
+            <div class="w-100 p-3   br dash pt-5 pb-5">
+                <div class="d-flex justify-content-center">
+                    <img src="https://i.postimg.cc/FHLf6vBc/Screenshot-2024-05-18-101729-removebg-preview.png"
+                        alt="" class="drop">
+                </div>
+                <h6 class="text-center mt-2">Drag and drop your file here</h6>
+                <p class="text-secondary text-center">or</p>
+                <div class="d-flex justify-content-center">
+                    <button type="button" class="btn font border" (click)="fileInput.click()">
+                        Browse file
+                    </button>
+                    <input #fileInput type="file" style="display: none" (change)="isFileSelected($event)">
+                </div>
+            </div>
+            <div class="con" *ngFor=" let image of myArray">
+                <img src="{{image}}" alt="" class="drop">
+            </div>
+
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn border border-danger" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" (click)="onCreateCollection()">Upload & Save</button>
         </div>
       </div>
     </div>

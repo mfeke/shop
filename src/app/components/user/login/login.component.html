@@ -52,7 +52,7 @@
 
             <div class="input-group border  input-group-merge">
                 <input type="text" class="form-control" id="inputGroupMergeFullName" aria-label="Mark Williams"
-                    aria-describedby="inputGroupMergeFullNameAddOn" [(ngModel)]="user.email"         [formControl]="emailFormControl"
+                    aria-describedby="inputGroupMergeFullNameAddOn"   [formControl]="emailFormControl"
                     (blur)="onBlur('email')"
                     (input)="onInput('email')">
             </div>
@@ -67,7 +67,7 @@
         <div class="input-group input-group-merge border">
             <input type="{{ hidePassword ? 'password' : 'text' }}" class="js-toggle-password p-2 px-3 form-control"
                 id="showPasswordLabel" placeholder="8+ characters required" aria-label="8+ characters required" required
-                minlength="8" [formControl]="passwFormControl"
+               [formControl]="passwFormControl"
                 (blur)="onBlur('password')"
                 (input)="onInput('password')">
             <a class=" input-group-appe input-group-text bg-white b" href="javascript:;">

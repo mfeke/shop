@@ -14,10 +14,7 @@ export class LoginComponent {
 
   hidePassword: boolean = true;
 
-  user = {
-    email: "",
-    password: ""
-  }
+
 
 
   invild = false
@@ -25,13 +22,14 @@ export class LoginComponent {
     Validators.required,
     Validators.email,
   ]);
-  
+
   passwFormControl = new FormControl('', [
     Validators.required,
   ]);
 
   emailTouched = false;
   passwTouched = false;
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
 
   onBlur(control: string) {
     if (control === 'email') {
@@ -57,24 +55,26 @@ export class LoginComponent {
     return this.passwTouched && this.passwFormControl.invalid;
   }
 
- 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
+
   togglePasswordVisibility(): void {
     this.hidePassword = !this.hidePassword;
   }
   submit() {
+    let user = {
+      email:this.emailFormControl.value,
+      password:this.passwFormControl.value
 
-    this.authService.isSignIn(this.user).subscribe({
+    }
+
+    this.authService.isSignIn(user).subscribe({
       next: data => {
         this.invild = false
-        console.log(data)
         this.tokenStorage.saveToken(data.accessToken)
         this.tokenStorage.saveUser(data.id)
       },
       error: err => {
         if (err.status === 404) {
           this.invild = true
-          console.log(this.invild)
         }
       }
     })
