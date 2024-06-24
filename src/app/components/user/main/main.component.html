@@ -1,123 +1,137 @@
-<div class="img mx-2 bg-white" *ngFor="let cover of body"
-    [ngStyle]="{'background': 'url(' + cover.image  + ') no-repeat 0 0 / cover'}">
-    <div class="bg d-flex justify-content-center align-items-center h-100">
-        <span class=" f px-0 p-3 text-white">New Arrivals {{cover.name}} Collection</span>
+<!-- <div class="">
 
+    <div class="img bg-white" *ngFor="let cover of body"
+        [ngStyle]="{'background': 'url(' + cover.image  + ') no-repeat 0 0 / cover'}">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <span class=" f px-0 p-3 text-white">New Arrivals {{cover.name}} Collection</span>
+
+        </div>
     </div>
-</div>
-<div class="p-1 mt-2">
-    <h2 class="pacifico-regular  mb-0">Trending Categories</h2>
-</div>
-<div class="grid-container mb-2">
-    <div class="coi" *ngFor="let item of listCart.slice(2,14)">
-        <div class="item1 pt-0 cur" [routerLink]="['/za',params|lowercase, getEncodedUrl(item.name)]">
-            <img src="{{item.image}}" alt="" class="w-100  prod">
-            <div class="d-flex ">
-                <div class="con">
-                    <label for="" class="pacifico-regular text-start pt-1">{{item.name |uppercase}}</label>
+
+    <div class="grid-container mb-2">
+        <div class="coi" *ngFor="let item of listCart.slice(2,14)">
+            <div class="item1 pt-0 cur" [routerLink]="['/za',params|lowercase, getEncodedUrl(item.name)]">
+                <img src="{{item.image}}" alt="" class="w-100  prod">
+                <div class="d-flex justify-content-center ">
+                    <div class="con d-flex justify-content-center">
+                        <label for="" class="pacifico-regular text-center pt-1">{{item.name |uppercase}}</label>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="grid-container-1 mt-3 bg-light bg" *ngFor="let promo of promoList">
-    <div class="w-100 d-flex">
-        <div class="img-1 " *ngFor="let image of promo.image"
-            [ngStyle]="{'background': 'url(' + image + ') no-repeat 0 0 / cover'}">
+    <div class="grid-container-1 mt-3 bg-light bg" *ngFor="let promo of promoList">
+        <div class="w-100 d-flex">
+            <div class="img-1 " *ngFor="let image of promo.image"
+                [ngStyle]="{'background': 'url(' + image + ') no-repeat 0 0 / cover'}">
 
 
+            </div>
         </div>
-    </div>
 
-    <div class="col pacifico-regular   d-flex align-items-center">
+        <div class="col pacifico-regular   d-flex align-items-center">
             <div class="cot">
                 <h1 class="h2">{{promo.name}}</h1>
                 <p class="des">{{promo.description}}</p>
-                <p class="text cur" >SHOP NOW</p>
+                <p class="text cur">SHOP NOW</p>
             </div>
         </div>
-</div>
-
-<h2 class="p-1 pacifico-regular mt-2">New In</h2>
-<div class="grid-container-new pacifico-regular">
-    <div class="item1 pt-0">
-        <img src="https://i.postimg.cc/5NQsFNgS/newmen.jpg" alt="" class="w-100 new">
-        <div class="d-flex justify-content-center">
+    </div>
+    <div class="mt-4 mb-4">
+        <div class=" bg-1  cur  d-flex justify-content-center  ">
             <div class="con">
-                <label for="" class="pacifico-regular text-start pt-1">Oversized teddy-lined jacket</label>
-                <p class="pacifico-regular  text mb-1 text-center">3 Colours</p>
-                <div class="d-flex justify-content-center">
-                    <label for="" class="pacifico-regular text-start ">{{price.newPrice|currency:"R "}}</label>
+                <div class="d-flex align-items-center">
+                    <div class="con me-4">
+                        <img src="https://i.postimg.cc/5tfJmvHH/download-removebg-preview-1.png" class="pay" alt="">
+                        <p class="text-dark font m mb-0">Pay in three</p>
+                    </div>
+                    <p class=" font">Wear Now. Pay later</p>
                 </div>
 
             </div>
-
-
         </div>
     </div>
+    <h2 class=" pacifico-regular mt-2">New In</h2>
+    <div class="grid-container-new pacifico-regular">
+        <div class="item1 pt-0">
+            <img src="https://i.postimg.cc/5NQsFNgS/newmen.jpg" alt="" class="w-100 new">
+            <div class="d-flex justify-content-center">
+                <div class="con">
+                    <label for="" class="pacifico-regular text-start pt-1">Oversized teddy-lined jacket</label>
+                    <p class="pacifico-regular  text mb-1 text-center">3 Colours</p>
+                    <div class="d-flex justify-content-center">
+                        <label for="" class="pacifico-regular text-start ">{{price.newPrice|currency:"R "}}</label>
+                    </div>
 
-    <div class="item1 pt-0">
-        <img src="https://i.postimg.cc/5NQsFNgS/newmen.jpg" alt="" class="w-100 new">
-        <div class="d-flex justify-content-center">
-            <div class="con">
-                <label for="" class="pacifico-regular text-start pt-1">Oversized teddy-lined jacket</label>
-                <p class="pacifico-regular  text mb-1 text-center">3 Colours</p>
-                <div class="d-flex justify-content-center">
-                    <label for="" class="pacifico-regular text-start ">{{price.newPrice|currency:"R "}}</label>
                 </div>
 
+
             </div>
-
-
         </div>
-    </div>
-    <div class="item1 pt-0">
-        <img src="https://i.postimg.cc/4yDb1VPb/new-mend.jpg" alt="" class="w-100 new">
-        <div class="d-flex justify-content-center">
-            <div class="con">
-                <label for="" class="pacifico-regular text-start pt-1">Oversized teddy-lined jacket</label>
-                <p class="pacifico-regular  text mb-1 text-center">3 Colours</p>
-                <div class="d-flex justify-content-center">
-                    <label for="" class="pacifico-regular text-start me-2 line"> {{price.oldPrice|currency:"R
-                        "}}</label>
-                    <label for="" class="pacifico-regular text-start ">{{price.newPrice|currency:"R "}}</label>
+
+        <div class="item1 pt-0">
+            <img src="https://i.postimg.cc/5NQsFNgS/newmen.jpg" alt="" class="w-100 new">
+            <div class="d-flex justify-content-center">
+                <div class="con">
+                    <label for="" class="pacifico-regular text-start pt-1">Oversized teddy-lined jacket</label>
+                    <p class="pacifico-regular  text mb-1 text-center">3 Colours</p>
+                    <div class="d-flex justify-content-center">
+                        <label for="" class="pacifico-regular text-start ">{{price.newPrice|currency:"R "}}</label>
+                    </div>
+
                 </div>
 
+
             </div>
-
-
         </div>
-    </div>
-    <div class="item1 pt-0">
-        <img src="https://i.postimg.cc/MTZsc73n/new-las.jpg" alt="" class="w-100 new">
-        <div class="d-flex justify-content-center">
-            <div class="con">
-                <label for="" class="pacifico-regular text-start pt-1">Oversized teddy-lined jacket</label>
-                <p class="pacifico-regular  text mb-1 text-center">3 Colours</p>
-                <div class="d-flex justify-content-center">
-                    <label for="" class="pacifico-regular text-start me-2 line"> {{price.oldPrice|currency:"R
-                        "}}</label>
-                    <label for="" class="pacifico-regular text-start ">{{price.newPrice|currency:"R "}}</label>
+        <div class="item1 pt-0">
+            <img src="https://i.postimg.cc/4yDb1VPb/new-mend.jpg" alt="" class="w-100 new">
+            <div class="d-flex justify-content-center">
+                <div class="con">
+                    <label for="" class="pacifico-regular text-start pt-1">Oversized teddy-lined jacket</label>
+                    <p class="pacifico-regular  text mb-1 text-center">3 Colours</p>
+                    <div class="d-flex justify-content-center">
+                        <label for="" class="pacifico-regular text-start me-2 line"> {{price.oldPrice|currency:"R
+                            "}}</label>
+                        <label for="" class="pacifico-regular text-start ">{{price.newPrice|currency:"R "}}</label>
+                    </div>
+
                 </div>
 
+
             </div>
+        </div>
+        <div class="item1 pt-0">
+            <img src="https://i.postimg.cc/MTZsc73n/new-las.jpg" alt="" class="w-100 new">
+            <div class="d-flex justify-content-center">
+                <div class="con">
+                    <label for="" class="pacifico-regular text-start pt-1">Oversized teddy-lined jacket</label>
+                    <p class="pacifico-regular  text mb-1 text-center">3 Colours</p>
+                    <div class="d-flex justify-content-center">
+                        <label for="" class="pacifico-regular text-start me-2 line"> {{price.oldPrice|currency:"R
+                            "}}</label>
+                        <label for="" class="pacifico-regular text-start ">{{price.newPrice|currency:"R "}}</label>
+                    </div>
+
+                </div>
 
 
+            </div>
         </div>
     </div>
-</div>
-
-<div class="">
-    <div class=" bg-1  cur  d-flex justify-content-center  ">
+    <div class="grid-container-1">
         <div class="con">
-            <div class="d-flex align-items-center">
-                <div class="con me-4">
-                    <img src="https://i.postimg.cc/5tfJmvHH/download-removebg-preview-1.png" class="pay" alt="">
-                    <p class="text-dark font m mb-0">Pay in three</p>
-                </div>
-                <p class=" font">Wear Now. Pay later</p>
-            </div>
+            <img src="https://i.postimg.cc/8P9g0CXc/327255143-902386387772848-2755383201561964400-n.jpg" alt=""
+                class="w-100">
+        </div>
+        <div class="con">
+            <img src="https://i.postimg.cc/ryhk5jSS/327229353-527321975880958-5446553412342380244-n.jpg" alt=""
+                class="w-100">
+        </div>
 
+        <div class="con w-10">
         </div>
     </div>
-</div>
+
+
+</div> -->

@@ -10,8 +10,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 export class ShopComponent {
-  backgroundUrl = 'https://i.postimg.cc/TwNxyVgC/ladis.jpg';
-  backgroundUrl2 = "https://i.postimg.cc/K8TvTMsN/winter.jpg"
+  backgroundUrl = 'https://i.postimg.cc/tgLhRLr5/118114948-1535310586638576-6177678515304372142-n.jpg';
+  images = ['https://i.postimg.cc/Pf1FtmHn/3107-3x2-1-spring-summer-23-collection-1280x853.jpg',
+    "https://i.postimg.cc/tCN6Cg7g/cq5dam-web-976-603-8-306904.webp"]
   body: any[] = []
 
   name = 'Global Trend Collection'
@@ -30,11 +31,12 @@ export class ShopComponent {
 
     this.productService.getCategories().subscribe({
       next: data => {
-        this.body = data
-        this.home = data[4]
-        this.most = data[5]
+        // this.body = data
+        // this.home = data[4]
+        // this.most = data[5]
 
-      }
+      },
+      
     })
     this.isAllCollection()
   }
