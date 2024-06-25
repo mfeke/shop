@@ -24,20 +24,20 @@ export class ShopComponent {
     oldPrice: 1200.00,
   }
   home: any = {}
-  most: any = {}
+  most: any = {} 
 
   constructor(private apiService: ApiService, private productService: ProductsService, private route: ActivatedRoute) { }
   ngOnInit() {
 
-    this.productService.getCategories().subscribe({
-      next: data => {
-        // this.body = data
-        // this.home = data[4]
-        // this.most = data[5]
+    // this.productService.getCategories().subscribe({
+    //   next: data => {
+    //     // this.body = data
+    //     // this.home = data[4]
+    //     // this.most = data[5]
 
-      },
+    //   },
       
-    })
+    // })
     this.isAllCollection()
   }
 

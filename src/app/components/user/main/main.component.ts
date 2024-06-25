@@ -32,7 +32,7 @@ export class MainComponent {
     this.isGetUrl()
     this.isGetCollectioByCat()
     this.isGetPromoByCat()
-    this.isGetCategory()
+    // this.isGetCategory()
 
   }
 
@@ -64,15 +64,15 @@ export class MainComponent {
 
 
   }
-  isGetCategory() {
-    this.productService.getCategories().subscribe({
-      next: data => {
-        console.log(data)
-        this.listCategory = data
-        this.catName = data
-      }
-    })
-  }
+  // isGetCategory() {
+  //   this.productService.getCategories().subscribe({
+  //     next: data => {
+  //       console.log(data)
+  //       this.listCategory = data
+  //       this.catName = data
+  //     }
+  //   })
+  // }
   getEncodedUrl(collectionName: string): string {
     return collectionName.replace(/\s+/g, '-')
   }

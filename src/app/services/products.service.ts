@@ -34,9 +34,7 @@ export class ProductsService {
     return this.http.post<any>(`${this.apiUrl}/createTag`,form,httpOptions );
 
   }
-  getCategories(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/getAllCategories`, httpOptions);
-  }
+
   getAllGallerys(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/getAllGallery`, httpOptions);
   }
