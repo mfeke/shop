@@ -46,7 +46,6 @@ export class CategoryComponent {
     this.categoryService.createCategory(formData).subscribe({
       next: data => {
         console.log(data)
-        this.categoryItem = data
       }
     })
   }
@@ -54,24 +53,25 @@ export class CategoryComponent {
     this.categoryService.getAllCategories().subscribe({
       next: data => {
         this.categoriesList = data
-        console.log(this.categoriesList)
       }
     })
-
-
   }
   isGetCategoryById(id:any){
-    console.log(id)
     this.categoryService.getCategoryById(id).subscribe({
       next:data=>{
   
         this.categoryItem = data
-        if(this.categoryItem){
-          console.log(this.categoryItem)
+      }
+    })
+  }
+  onDeleteCategoryById(id:any){
+    this.categoryService.deleteCategoryById(id).subscribe({
+      next:data=>{
+        if(data){
+          location.reload()
         }
       }
     })
-
-
   }
 }
+

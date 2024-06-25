@@ -11,7 +11,7 @@ import { CategoryComponent } from './components/admin/category/category.componen
 const routes: Routes = [
   {path:"account/signin", component:LoginComponent},
   {path:"home", component:ShopComponent},
-  {path:"admin/collection", component:CollectionComponent},
+  {path:"admin/:name/collection", component:CollectionComponent},
   {path:"admin/category", component:CategoryComponent},
   {path:"za/:id", component:MainComponent},
   {path:"za/:catgory/:collection", component:HomeComponent},

@@ -1,76 +1,139 @@
 <div class="container">
     <div class="d-flex justify-content-between mb-4">
         <h4 class="">Collection</h4>
-        <button class="bg-primary text-white btn">
+        <button class="bg-primary text-white btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Create Collection
         </button>
     </div>
     <div class="d-flex justify-content-end">
         <div class="d-flex">
-            <div class="border me-3 br p-1 text-secondary" >
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
-                    <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
-                  </svg>
+            <div class="border me-3 br p-1 text-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-filter"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
+                </svg>
             </div>
             <div class="border br me-3 p-1 px-2 text-secondary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-up" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5m-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5"/>
-                  </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-down-up" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5m-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5" />
+                </svg>
             </div>
             <div class="border br px-2 p-1 text-secondary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
-                    <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
-                  </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-three-dots" viewBox="0 0 16 16">
+                    <path
+                        d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
+                </svg>
             </div>
         </div>
 
     </div>
     <table class="table table-hover ">
-        <thead class="thead-light  text-secondary" >
-          <tr>
-            <th scope="col d-flex">
-                <div class="d-flex px-2">
-                    <input type="checkbox" class="me-3" name="agreement" value="ok" checked>
-                    <p class="text-dark mb-0">Title</p>
-                </div>
-            </th>
-            <th scope="col ">Products</th>
-            <th scope="col">Main Tag</th>
-            <th scope="col">Action</th>
-          </tr>
+        <thead class="thead-light  text-secondary">
+            <tr>
+                <th scope="col d-flex">
+                    <div class="d-flex px-2">
+                        <input type="checkbox" class="me-3" name="agreement" value="ok" checked>
+                        <p class="text-dark mb-0">Title</p>
+                    </div>
+                </th>
+                <th scope="col ">Products</th>
+                <th scope="col">Main Tag</th>
+                <th scope="col">Action</th>
+            </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">
-                <div class="d-flex">
-                    <div class="img-container me-3">
-                        <img src="https://i.postimg.cc/tTG8hBqz/335436589-1525615111294543-225423551462420608-n.jpg" class="br border" alt="">
+            <tr *ngFor='let collection of collectionList'>
+                <th scope="row">
+                    <div class="d-flex" >
+                        <div class="img-container me-3"*ngFor="let image of collection.image">
+                            <img src="{{image}}"
+                                class="br border" alt="">
+                        </div>
+                        <div class="d-flex font align-items-center">
+                            {{collection.name | capitalize }}
+                        </div>
                     </div>
-                    <div class="d-flex font align-items-center">
-                        Hoodies & Sweatshirts
+                </th>
+                <td>
+                    <div class="d-flex h-100  font align-items-center">
+                        <p class="text-dark mt-3">300 Items</p> 
                     </div>
-                </div>
-            </th>
-            <td>
-                <div class="d-flex h-100 mt-2 font align-items-center">
-                    300 Items
-                </div>
-            </td>
-            <td>
-                <div class="d-flex h-100 mt-2 font align-items-center">
-                    Top
-                </div>
-            </td>
-            <td>
-                <div class="d-flex cur  h-100 mt-1 align-items-center">
-                    <div class="border br px-2 p-1 hover  text-secondary">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
-                            <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
-                          </svg>
+                </td>
+                <td> 
+                    <div class="d-flex h-100  font align-items-center">
+                        <p class="text-dark mt-3 ">{{collection.mainTag}}</p>    
                     </div>
-                </div>
-            </td>
-          </tr>
+                </td>
+                <td>
+                    <div class="d-flex cur  h-100 mt-1 align-items-center">
+                        <div class="border br px-2 p-1 hover  text-secondary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                <path
+                                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
+                            </svg>
+                        </div>
+                    </div>
+                </td>
+            </tr>
         </tbody>
-      </table>
+    </table>
+    <div class="h-10 w-100 d-flex justify-content-center align-items-center">
+        <div class="con">
+            <div class="d-flex justify-content-center">
+                <img src="https://i.postimg.cc/fTZVZHqQ/postimage.png" class="dro" alt="">
+            </div>
+            <h4 class="mt-3">This collection has no data</h4>
+            <p class="link cur px-2 text-dark text-center"  data-bs-toggle="modal" data-bs-target="#exampleModal">create collection</p>
+
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content  bg-light">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Category</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control mb-2" placeholder="Enter Name of Collection" [(ngModel)]="name"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                <input type="checkbox" [(ngModel)]="return" id="" (change)="onChangeReturn($event)">
+                <input type="text" class="form-control" placeholder="Enter Name of Main Tag" [(ngModel)]="mainTag"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                <div class="w-100 p-3   br dash pt-5 pb-5">
+                    <div class="d-flex justify-content-center">
+                        <img src="https://i.postimg.cc/FHLf6vBc/Screenshot-2024-05-18-101729-removebg-preview.png"
+                            alt="" class="drop">
+                    </div>
+                    <h6 class="text-center mt-2">Drag and drop your file here</h6>
+                    <p class="text-secondary text-center">or</p>
+                    <div class="d-flex justify-content-center">
+                        <button type="button" class="btn font border" (click)="fileInput.click()">
+                            Browse file
+                        </button>
+                        <input #fileInput type="file" style="display: none" (change)="isFileSelected($event)">
+                    </div>
+                </div>
+                <div class="con" *ngFor=" let image of myArray">
+                    <img src="{{image}}" alt="" class="drop">
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn border border-danger" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" (click)="onCreateCollection()">Upload & Save</button>
+            </div>
+        </div>
+    </div>
 </div>

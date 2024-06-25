@@ -21,6 +21,7 @@ import { DepartmentsComponent } from './components/user/departments/departments.
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { CollectionComponent } from './components/admin/collection/collection.component';
 import { CategoryComponent } from './components/admin/category/category.component';
+import { CapitalizePipe } from './capitalize.pipe';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { CategoryComponent } from './components/admin/category/category.componen
     DepartmentsComponent,
     CollectionComponent,
     CategoryComponent,
+    CapitalizePipe,
   ],
   imports: [
     BrowserModule,

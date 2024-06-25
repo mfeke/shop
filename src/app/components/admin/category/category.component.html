@@ -47,15 +47,15 @@
                         </button>
                         <mat-menu #menu="matMenu">
                             <button mat-menu-item data-bs-toggle="modal" data-bs-target="#exampleModalEdit" (click)="isGetCategoryById(category._id)">Edit</button>
-                            <button mat-menu-item>Delete</button>
-                            <button mat-menu-item>View Collection</button>
+                            <button mat-menu-item (click)="onDeleteCategoryById(category._id)">Delete</button>
+                            <button mat-menu-item routerLink="/admin/{{category.name}}/collection">View Collection</button>
 
                         </mat-menu>
                     </div>
                 </div>
             </div>
             <div class="w-100 d-flex justify-content-center p-2 border bg-white">
-                <span class="text-center">{{category.name}}</span>
+                <span class="text-center">{{category.name|titlecase}}</span>
             </div>
         </div>
     </div>
@@ -100,6 +100,7 @@
         </div>
     </div>
 </div>
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

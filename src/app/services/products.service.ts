@@ -18,18 +18,6 @@ export class ProductsService {
   constructor(private http: HttpClient) { }
   
 
-  createCategory(form:any):Observable<any>{
-    return this.http.post<any>(`${this.apiUrl}/createCategory`,form,httpOptions );
-
-  }
-  createCover(form:any):Observable<any>{
-    return this.http.post<any>(`${this.apiUrl}/createCover`,form,httpOptions );
-
-  }
-  createGallery(form:any):Observable<any>{
-    return this.http.post<any>(`${this.apiUrl}/createGallery`,form,httpOptions );
-
-  }
   createTag(form:any):Observable<any>{
     return this.http.post<any>(`${this.apiUrl}/createTag`,form,httpOptions );
 
@@ -39,10 +27,7 @@ export class ProductsService {
     return this.http.get<any>(`${this.apiUrl}/getAllGallery`, httpOptions);
   }
 
-  createCollection(form:any):Observable<any>{
-    return this.http.post<any>(`${this.apiUrl}/createCollection`,form,httpOptions );
 
-  }
   createPromo(form:any):Observable<any>{
     return this.http.post<any>(`${this.apiUrl}/createPromotion`,form,httpOptions );
 
