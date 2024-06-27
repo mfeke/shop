@@ -1,9 +1,15 @@
 <div class="container">
     <div class="d-flex justify-content-between mb-4">
         <h4 class="">Collection</h4>
-        <button class="bg-primary text-white btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Create Collection
-        </button>
+        <div class="con">
+            <button class="bg-primary text-white btn me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Create Collection
+            </button>
+            <button class="bg-primary text-white btn" data-bs-toggle="modal" data-bs-target="#exampleModalPromo">
+                Create Promotion
+            </button>
+        </div>
+
     </div>
     <div class="d-flex justify-content-end">
         <div class="d-flex">
@@ -70,7 +76,7 @@
                 </td>
                 <td>
                     <div class="d-flex cur  h-100 mt-1 align-items-center">
-                        <div class="border br px-2 p-1 hover  text-secondary">
+                        <div class="border br px-2 p-1 mt-2 hover  text-secondary">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
                                 <path
@@ -82,7 +88,7 @@
             </tr>
         </tbody>
     </table>
-    <div class="h-10 w-100 d-flex justify-content-center align-items-center">
+    <div  *ngIf="numArray === 0 "  class="h-10 w-100 d-flex justify-content-center align-items-center">
         <div class="con">
             <div class="d-flex justify-content-center">
                 <img src="https://i.postimg.cc/fTZVZHqQ/postimage.png" class="dro" alt="">
@@ -110,6 +116,49 @@
                 <input type="checkbox" [(ngModel)]="return" id="" (change)="onChangeReturn($event)">
                 <input type="text" class="form-control" placeholder="Enter Name of Main Tag" [(ngModel)]="mainTag"
                     aria-label="Username" aria-describedby="basic-addon1">
+                <div class="w-100 p-3   br dash pt-5 pb-5">
+                    <div class="d-flex justify-content-center">
+                        <img src="https://i.postimg.cc/FHLf6vBc/Screenshot-2024-05-18-101729-removebg-preview.png"
+                            alt="" class="drop">
+                    </div>
+                    <h6 class="text-center mt-2">Drag and drop your file here</h6>
+                    <p class="text-secondary text-center">or</p>
+                    <div class="d-flex justify-content-center">
+                        <button type="button" class="btn font border" (click)="fileInput.click()">
+                            Browse file
+                        </button>
+                        <input #fileInput type="file" style="display: none" (change)="isFileSelected($event)">
+                    </div>
+                </div>
+                <div class="con" *ngFor=" let image of myArray">
+                    <img src="{{image}}" alt="" class="drop">
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn border border-danger" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" (click)="onCreateCollection()">Upload & Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalPromo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content  bg-light">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Promotion</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control mb-2" placeholder="Enter Name of Promotion" [(ngModel)]="name"
+                    aria-label="Username" aria-describedby="basic-addon1">
+                <input type="checkbox" [(ngModel)]="return" id="" (change)="onChangeReturn($event)">
+                <input type="text" class="form-control" placeholder="Enter Name of description" [(ngModel)]="description"
+                   aria-describedby="basic-addon1">
                 <div class="w-100 p-3   br dash pt-5 pb-5">
                     <div class="d-flex justify-content-center">
                         <img src="https://i.postimg.cc/FHLf6vBc/Screenshot-2024-05-18-101729-removebg-preview.png"

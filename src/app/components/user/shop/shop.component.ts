@@ -29,25 +29,11 @@ export class ShopComponent {
   constructor(private apiService: ApiService, private productService: ProductsService, private route: ActivatedRoute) { }
   ngOnInit() {
 
-    // this.productService.getCategories().subscribe({
-    //   next: data => {
-    //     // this.body = data
-    //     // this.home = data[4]
-    //     // this.most = data[5]
 
-    //   },
-      
-    // })
     this.isAllCollection()
   }
 
-  isGetGallery() {
-    this.productService.getAllGallerys().subscribe({
-      next: data => {
-        this.listGallery = data
-      }
-    })
-  }
+
   isAllCollection() {
     this.productService.getCollection().subscribe({
       next: data => {

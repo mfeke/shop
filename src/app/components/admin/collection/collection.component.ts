@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Pipe, PipeTransform } from '@angular/core';
 import { CollectionService } from '../../../services/collection.service';
+import { PromotionService } from '../../../services/promotion.service';
 
 // @Pipe({
 //   name: 'capitalize'
@@ -19,12 +20,15 @@ export class CollectionComponent {
   mainTag = ""
   nameUrl: any;
   num: number = 0;
+  numArray: number = 0
+  description = ''
   return: boolean = false
-  constructor(private route: ActivatedRoute, private collectionService: CollectionService) { }
+  constructor(private route: ActivatedRoute, private collectionService: CollectionService, private promotionService: PromotionService) { }
 
   ngOnInit() {
     this.nameUrl = this.route.snapshot.paramMap.get('name');
     this.isGetCollectionByCat()
+    this.numArray = this.collectionList.length
   }
   isFileSelected(event: any) {
     const files: FileList = event.target.files;
@@ -52,7 +56,24 @@ export class CollectionComponent {
     var formData = new FormData();
     formData.append('name', this.name);
     formData.append("categoryName", this.nameUrl)
-    formData.append('mainTag', this.mainTag);
+    formData.append('description', this.description);
+    formData.append('return', String(this.num))
+    if (this.selectedFiles && this.selectedFiles.length) {
+      for (let i = 0; i < this.selectedFiles.length; i++) {
+        formData.append('images', this.selectedFiles[i]);
+      }
+    }
+    this.promotionService.createPromo(formData).subscribe({
+      next: data => {
+        console.log(data)
+      }
+    })
+  }
+  onCreatePromo() {
+    var formData = new FormData();
+    formData.append('name', this.name);
+    formData.append("categoryName", this.nameUrl)
+    formData.append("descrition", this.nameUrl)
     formData.append('return', String(this.num))
     if (this.selectedFiles && this.selectedFiles.length) {
       for (let i = 0; i < this.selectedFiles.length; i++) {
@@ -65,6 +86,7 @@ export class CollectionComponent {
       }
     })
   }
+
   isGetCollectionByCat() {
     if (this.nameUrl) {
       this.collectionService.getCollectionByCat(this.nameUrl).subscribe({

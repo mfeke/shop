@@ -18,16 +18,6 @@ export class ProductsService {
   constructor(private http: HttpClient) { }
   
 
-  createTag(form:any):Observable<any>{
-    return this.http.post<any>(`${this.apiUrl}/createTag`,form,httpOptions );
-
-  }
-
-  getAllGallerys(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/getAllGallery`, httpOptions);
-  }
-
-
   createPromo(form:any):Observable<any>{
     return this.http.post<any>(`${this.apiUrl}/createPromotion`,form,httpOptions );
 
